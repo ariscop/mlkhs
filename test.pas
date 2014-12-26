@@ -25,7 +25,7 @@ begin
     testinfo.MD5Song := 'thisisahash';
     testinfo.Level := 2;
 
-    hLibW := LoadLibrary('./libmlkhs.so');
+    hLibW := LoadLibrary('./mlkhs.dll');
     @Login := GetProcAddress (hLibW, 'Login');
     @SendScore := GetProcAddress (hLibW, 'SendScore');
     @EncryptScore := GetProcAddress (hLibW, 'EncryptScore');

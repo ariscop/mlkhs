@@ -1,7 +1,12 @@
-all: libmlkhs.so test
+all: test.exe
 
-libmlkhs.so: UWebSDK.pas mlkhs.pas
-	fpc -g mlkhs.pas
+FLAGS=-g -veiwnh
 
-test: libmlkhs.so test.pas
-	fpc -g test.pas
+mlkhs.dll: UWebSDK.pas mlkhs.pas
+	wine fpc -CD $(FLAGS) mlkhs.pas
+
+test.exe: mlkhs.dll test.pas
+	wine fpc $(FLAGS) test.pas
+
+clean:
+	rm -f *.o *.dll *.exe *.ppu

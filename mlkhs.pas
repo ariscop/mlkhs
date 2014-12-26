@@ -10,14 +10,14 @@ uses UWebSDK
     ,fphttpclient
 ;
 
-procedure WebsiteInfo (var Info: TWebsiteInfo);
+procedure WebsiteInfo (var Info: TWebsiteInfo); cdecl;
 begin
   Info.ID := 0; // seems to be ignored
   Info.Name := 'My Little Karaoke';
 end;
 exports WebsiteInfo;
 
-function SendScore (SendInfo: TSendInfo): integer;
+function SendScore (SendInfo: TSendInfo): integer; cdecl;
 var
   url: UTF8String;
   res: UTF8String;
@@ -73,7 +73,7 @@ begin
 end;
 exports SendScore;
 
-function EncryptScore (SendInfo: TSendInfo): widestring;
+function EncryptScore (SendInfo: TSendInfo): widestring; cdecl;
 var
   ret: UTF8String;
 begin
@@ -90,7 +90,7 @@ begin
 end;
 exports EncryptScore;
 
-function Login (LoginInfo: TLoginInfo): byte;
+function Login (LoginInfo: TLoginInfo): byte; cdecl;
 begin
   {
     *****************************
@@ -104,13 +104,13 @@ begin
 end;
 exports Login;
 
-function EncryptPassword (LoginInfo: TLoginInfo): widestring;
+function EncryptPassword (LoginInfo: TLoginInfo): widestring; cdecl;
 begin
   Result := widestring(LoginInfo.Password);
 end;
 exports EncryptPassword;
 
-function DownloadScore (ListMD5Song: widestring; Level: byte): widestring;
+function DownloadScore (ListMD5Song: widestring; Level: byte): widestring; cdecl;
 begin
   Result := widestring('');
 end;
