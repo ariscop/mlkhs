@@ -3,7 +3,7 @@ all: test.exe
 FLAGS=-g -veiwnh
 
 mlkhs.dll: UWebSDK.pas mlkhs.pas
-	wine fpc -CD $(FLAGS) mlkhs.pas
+	wine fpc $(FLAGS) mlkhs.pas
 
 test.exe: mlkhs.dll test.pas
 	wine fpc $(FLAGS) test.pas

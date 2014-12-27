@@ -40,7 +40,7 @@ begin
   5: ScreenPopupError.ShowPopup(Language.Translate('WEBSITE_ERROR_SCORE_DUPLICATED'));
   7: ScreenPopupError.ShowPopup(Language.Translate('WEBSITE_ERROR_SONG'));
 }
-  url := 'http://www.mylittlekaraoke.com/scores.php';
+  url := 'http://sco.mylittlekaraoke.com/hs.php';
   AppendStr(url, '?username=');
   AppendStr(url, SendInfo.Username);
   AppendStr(url, '&password=');
