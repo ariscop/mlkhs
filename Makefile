@@ -1,6 +1,6 @@
 all: test.exe
 
-FLAGS=-g -veiwnh
+FLAGS=-viwnh
 
 mlkhs.dll: UWebSDK.pas mlkhs.pas
 	wine fpc $(FLAGS) mlkhs.pas
