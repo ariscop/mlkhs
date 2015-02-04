@@ -30,7 +30,7 @@ begin
     Add('scoreline', Inttostr(SendInfo.ScoreLineInt));
     Add('scoregolden', Inttostr(SendInfo.ScoreGoldenInt));
     Add('song', SendInfo.MD5Song);
-    Add('level', Inttostr(SendInfo.ScoreInt));
+    Add('level', Inttostr(SendInfo.Level));
     Result := AsJSON;
     Free;
   end;
@@ -56,7 +56,7 @@ begin
   With TFPHttpClient.Create(Nil) do try
       RequestBody := TStringStream.Create(SendInfoToJson(SendInfo));
       AddHeader('Content-Type','application/json');
-      Result := StrToInt(Post(url)); // WEBSITE_OK_SEND
+      Result := StrToInt(Post(url));
       if ResponseStatusCode <> 200 then
         Result := 4;
       Free;
@@ -114,10 +114,10 @@ begin
       RequestBody := TStringStream.Create(ListMD5Song);
       Result := widestring(Post(url));
       if ResponseStatusCode <> 200 then
-        Result := widestring('');
+        Result := widestring('0');
       Free;
     except
-      Result := widestring('');
+      Result := widestring('0');
       Free;
     end;
 end;
