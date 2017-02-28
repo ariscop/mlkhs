@@ -19,7 +19,6 @@ var
 begin
     testinfo.Username := 'ariscop';
     testinfo.Password := 'SuprSecrt';
-    testinfo.Name := 'Phase4';
     testinfo.ScoreInt := 1337;
     testinfo.ScoreLineInt := 7331;
     testinfo.ScoreGoldenInt := 3173;
