@@ -69,7 +69,7 @@ begin
 }
   Result := 4; // WEBSITE_ERROR_SCORE
 
-  url := 'https://sco.mylittlekaraoke.com/hs.php';
+  url := 'https://www.mylittlekaraoke.com/highscores/score/submit';
   With TFPHttpClient.Create(Nil) do try
       RequestBody := TStringStream.Create(SendInfoToJson(SendInfo));
       AddHeader('Content-Type','application/json');
@@ -123,7 +123,7 @@ begin
   * Jan 07 22:57:22 <Phase4>        so 07680 06477 Elena_PM
   * Jan 07 22:57:48 <Phase4>        top, average, user
   }
-  url := 'https://sco.mylittlekaraoke.com/hs.php';
+  url := 'https://www.mylittlekaraoke.com/highscores/score/retrieve';
   With TFPHttpClient.Create(Nil) do try
       AppendStr(url, '?level=');
       AppendStr(url, Inttostr(Level));
