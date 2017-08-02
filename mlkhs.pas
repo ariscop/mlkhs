@@ -42,7 +42,6 @@ begin
   with TJSONObject.Create() do begin
     Add('username', SendInfo.Username);
     Add('password', SendInfo.Password);
-    Add('player', SendInfo.Name);
     Add('score', Inttostr(SendInfo.ScoreInt));
     Add('scoreline', Inttostr(SendInfo.ScoreLineInt));
     Add('scoregolden', Inttostr(SendInfo.ScoreGoldenInt));
