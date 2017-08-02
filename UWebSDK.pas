@@ -16,7 +16,6 @@ type
   TSendInfo = record
       Username:   UTF8String;   // Username
       Password:   UTF8String;   // Password
-      Name:       UTF8String;   // Name of the player
       ScoreInt:       integer;  // Player's Score Int
       ScoreLineInt:   integer;  // Player's Score Line
       ScoreGoldenInt: integer;  // Player's Score Golden
